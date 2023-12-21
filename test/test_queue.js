@@ -749,8 +749,9 @@ describe('Queue', () => {
       });
 
       it('should keep of jobs newer than specified after completed with removeOnComplete', async () => {
-        const age = 7;
-        await testRemoveOnFinish({ age }, age);
+        for (let age = 1; age <= 13; age++) {
+          await testRemoveOnFinish({ age }, age);
+        }
       });
 
       it('should keep of jobs newer than specified and up to a count completed with removeOnComplete', async () => {
